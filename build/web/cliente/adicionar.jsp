@@ -62,13 +62,11 @@
                     </div>
                     <div class="linha row">
                         <div class="col-6 label-dado">Pessoa</div>
-
                         <select type="text" name="lb4" class="col-6 input-dado" id="lb4" required disabled>
                             <%for (Pessoa pessoa : $Pessoa.result("all")) {%>
                             <option value="<%=pessoa.getIdpessoa()%>"> <%=pessoa.getIdpessoa()%> -  {<%=pessoa.getNome()%>} </option>
                             <%}%>
                         </select>
-
                     </div>
                 </div>
             </form>
