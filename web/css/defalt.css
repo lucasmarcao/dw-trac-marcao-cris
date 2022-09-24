@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background: url(../midia/mesatoalha.jpg);
+}
+main {
+  background: url(../midia/pizza-walpaper.jpg);
+  width: 700px;
+  min-height: 20px;
+  border-left: black 2px solid;
+  border-top: 2px solid black;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 10px;
+}
+.card {
+  margin: 15px 0;
+}
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 56px;
+  background: url(../midia/fundo1.jpg);
+  position: static;
+  border-top: 1px solid black;
+  bottom: 0;
+  left: 0;
+}
+
+.logo-footer {
+  vertical-align: middle;
+  margin-top: 12px;
+  height: 32px;
+  width: 38px;
+}
+
+.text-footer {
+  margin-top: 15px;
+}
+
+/* responsivo */
+.crud {
+  margin-top: 8px;
+  padding: 10px;
+  margin-left: 5%;
+  width: 90%;
+  height: 600px;
+  background: url(/img/fundo1.jpg);
+  margin-bottom: 5px;
+}
+.cabeca {
+  display: block;
+  padding: 8px;
+  margin: 10px;
+  background: url(../midia/pizza-walpaper.jpg);
+  box-shadow: 10px 5px 5px black;
+  border-radius: 5px;
+}
+.campo {
+  margin: 5px 7px;
+  padding: 10px;
+  font-family: Cambria, Cochin !important;
+}
+.input {
+  width: 260px;
+  border: 2px solid wheat;
+}
+.botao {
+  border: 1px solid wheat;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: Georgia;
+  font-weight: bold;
+  font-size: 16px;
+  width: 110px;
+}
+.botao:hover {
+  background: linear-gradient(rgb(213, 255, 28), rgb(73, 122, 116));
+  color: black;
+}
+.buscar {
+  background-color: rgb(1, 73, 1);
+  color: cornsilk;
+}
+.adcionar {
+  background-color: lightblue;
+  display: none;
+}
+.alterar {
+  background-color: orange;
+  display: none;
+}
+.listar {
+  background-color: darkturquoise;
+  margin-top: 2px;
+}
+.excluir {
+  background-color: black;
+  color: aliceblue;
+  display: none;
+}
+.cancelar {
+  background-color: crimson;
+  display: none;
+}
+.salvar {
+  background-color: rgb(57, 233, 57);
+  color: black;
+  display: none;
+}
+.corpo {
+  padding: 8px !important;
+  margin-top: 20px;
+  background: rgba(77, 45, 0, 0.8);
+  border: 2px solid rgb(14, 7, 7);
+}
+.linha {
+  height: 86px;
+  padding: 0px 15px !important;
+}
+.label-dado,
+.input-dado {
+  height: 86px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-family: Cambria, Cochin !important;
+}
+.input-dado::placeholder {
+  color: rgb(60, 60, 60);
+}
+
+.label-dado:first-child {
+  border-top: 2px solid black;
+}
+.label-dado:last-child {
+  border-bottom: 2px solid black;
+}
+.label-dado {
+  text-align: center;
+  background: #351e25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  word-break: break-all;
+  opacity: 0.8;
+  color: cornsilk;
+  text-transform: uppercase;
+}
+.input-dado {
+  padding: 0 10px;
+  background-color: grey;
+  color: black !important;
+}
+.centraliza {
+  display: inline;
+}
+option {
+  background-color: rgb(75, 75, 72);
+  color: aqua;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 2px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.centerdata {
+  background: linear-gradient(black, rgb(0, 42, 0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 0, 0);
+}
+.datas {
+  display: none;
+  border: 2px solid black;
+  background-color: rgb(0, 200, 0);
+  margin: 3px 10px 2px 10px;
+  padding: 6px;
+  color: rgb(0, 0, 0);
+}
+.id-label {
+  border: 2px solid wheat;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 9px;
+  background: url(../midia/fundo3.jpg);
+  padding-bottom: 11px;
+  font-family: cursive, 'Courier New', Courier, monospace;
+  color: wheat;
+  margin-right: -14px;
+}
+/* estrela input */
+.estrelas input[type="radio"] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content: "\f005";
+  margin-top: 10px;
+  color: #fc0;
+}
+.estrelas input[type="radio"]:checked ~ label i.fa:before {
+  color: #ccc;
+  margin-top: 10px;
+}
+.btn-primary {
+  color: green;
+  font-size: 22px !important;
+  background: url(../midia/fundo2.jpg) !important;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  transition: 0.5s !important;
+  background: linear-gradient(aqua, gold) !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  color: black;
+}
+
+.colapso {
+  background: url(../midia/fundo4.jpg);
+}
+
+.colapse-btn {
+  font-size: 24px !important;
+  font-weight: bold;
+  color: azure !important;
+}
+
+code {
+  padding: 3px;
+  font-size: 22px;
+  background-color: aliceblue;
+}
+.add-foto {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+}
+.ad1 {
+  position: fixed;
+  top: 250px;
+  left: 20px;
+}
+.ad2 {
+  position: fixed;
+  top: 250px;
+  right: 20px;
+}
+.fundo-azul {
+  background: url(../midia/fundo4.jpg);
+  padding: 10px 20px;
+}
+.perfil {
+  background: url(https://png.pngtree.com/thumb_back/fh260/background/20210907/pngtree-anime-beautiful-sky-synthetic-background-image_811422.jpg);
+  width: 100%;
+  height: 180px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.bolinha {
+  position: absolute;
+  bottom: -30px;
+  left: 20px;
+  display: inline;
+}
+.foto-perfil {
+  display: inline;
+  border-radius: 100px;
+  width: 130px;
+  height: 130px;
+}
+.editar-perfil {
+  position: absolute;
+  bottom: 7px;
+  right: 20px;
+}
+.user-name {
+  display: inline;
+  color: gold;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 6px 8px;
+  background: url(../midia/fundo3.jpg);
+}
+@media (max-width: 991.98px) {
+  .crud {
+    height: 940px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 20px;
+  }
+  .add-foto {
+    display: none !important;
+  }
+  .centraliza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .id-label {
+    padding-top: 10.5px;
+    padding-bottom: 9.5px;
+  }
+
+  .label-dado {
+    font-size: 20px;
+  }
+  .input-dado {
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 0;
+    padding-left: 2px;
+  }
+
+  .id-label {
+    width: 18%;
+  }
+
+  .input {
+    width: 78%;
+  }
+
+  .variavel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .editar-perfil {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+  }
+
+  .centerdata {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    background: url(../midia/fundo1.jpg);
+    width: 300px;
+  }
+  footer {
+    height: 85px;
+  }
+  .text-footer {
+    margin-top: 2px;
+    text-align: center !important;
+  }
+}

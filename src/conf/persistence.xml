@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="UP" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Entidades.Acompanhamentos</class>
+    <class>Entidades.Cargos</class>
+    <class>Entidades.Cliente</class>
+    <class>Entidades.Fornecedor</class>
+    <class>Entidades.Funcionario</class>
+    <class>Entidades.Ingredientes</class>
+    <class>Entidades.Ingredientes_has_Pizza</class>
+    <class>Entidades.Pedido</class>
+    <class>Entidades.Pedido_has_Pizza</class>
+    <class>Entidades.Pessoa</class>
+    <class>Entidades.Pizza</class>
+    <class>Entidades.User</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3336/lp3-segundo-bimestre?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="LucasMarcao1"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
