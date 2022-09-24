@@ -1,0 +1,32 @@
+versão 0.1 {
+  No momento só tem o Marcão com o bd e tá fazendo a 
+  estrutura de pastas do projeto, logo em seguida vou
+  vou fazer a interface do menu, e o arquivo css padrão
+  que vai ser reutilizado varias vezes.
+}
+
+versão 0.2 {
+  Já fiz a interface do menu, agora estou fazendo os formularios
+  e criei mais alguns arquivos css, também ja fiz a parte de listagem de 
+  uma das tabelas, todas elas (as tabelas) vao ser padronizadas, fiz um modal
+  pra confirmação do botão excluir, além disso também fiz uma tela de erro.
+}
+
+versão 0.3 {
+  adcionei uns arquivos javascript que vao ter microserviços no meu crud,
+  o bd ja está pronto, acabei de fazer a pagina "fale conosco" 
+  vou fazer mais algumas tabelas, acabei de postar o site manualmente no netlify.
+  fiz o design do n pra m também.
+}
+
+versão 0.4 {
+  Hoje eu postei o projeto no Git Hub( fiz a integração com o netlify), 
+  fiz todas as tables do azul, e fiz as páginas de Cadastro e login.
+  Estou buscando formas de reutilizar os estilos pra ter menos trabalho.
+  Mexi um pouco no JS do projeto. e to pensando como vai ser o perfil do user.
+}
+
+versão 0.5 {
+  Hoje eu terminei todas as tabelas e fiz o perfil user( ainda está inacabado ).
+  Vou arrumar a responsividade de algumas paginas.
+}

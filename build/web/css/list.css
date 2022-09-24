@@ -1,0 +1,147 @@
+/* modals */
+.titulo-modal {
+  background: url(../midia/fundo2.jpg);
+  color: aliceblue;
+}
+h5{
+  margin-top: 10px;
+}
+.corpo-modal {
+  background: url(../midia/fundo2.jpg);
+}
+.demo {
+  margin-left: 2%;
+  width: 96%;
+  border-collapse: collapse;
+  background: url(../midia/fundo2.jpg);
+  padding: 5px;
+  padding-right: 1px;
+}
+
+.cabeca-modal {
+  padding-top: 5px;
+  display: flex;
+  width: 600px;
+  background: url(../midia/fundo1.jpg);
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
+  text-align: center;
+  font-size: 15px !important;
+  font-weight: 800;
+}
+
+.cabeca-item {
+  margin-bottom: 5px;
+  margin-right: 2px;
+  margin-left: 1px;
+  padding-top: 10px;
+  display: inline-flex;
+  width: 95px;
+  background-color: seagreen;
+  height: 50px;
+  border: #000000 2px solid;
+  justify-content: center;
+  align-items: center;
+}
+
+.itens {
+  background-color: rgb(115, 133, 118);
+  display: inline-flex;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dado-item {
+  margin-top: 3px;
+  margin-bottom: 2px;
+  margin-right: 3px;
+  margin-left: 3px;
+  background-color: rgb(197, 184, 168);
+  border: 2px solid #000000;
+  text-align: center;
+  display: inline-flex;
+  width: 15.4%;
+  font-size: 12px !important;
+  height: 58px;
+  padding: 5px 0.5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.id-item {
+  background-color: aqua;
+  font-weight: bold;
+}
+
+.scroll {
+  height: 360px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.scroll::-webkit-scrollbar {
+  background-color: black !important;
+}
+.scroll::-webkit-scrollbar-thumb {
+  border: rgba(38, 58, 49, 0.6) 2px solid;
+  background: url(../midia/fundo1.jpg) !important;
+  border-radius: 15px;
+}
+.scroll::-webkit-scrollbar-corner {
+  background: black !important;
+  color: #000000 !important;
+}
+.close {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  height: 40px !important;
+  background-color: rgb(255, 1, 1) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+
+/* Modal excluir */
+#negado,
+#confirmado {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+}
+.crud {
+  margin-left: 0;
+  width: 720px;
+  height: 600px;
+}
+
+.list-maior{
+  width: 220px !important;
+}
+
+@media (max-width: 991.98px) {
+  .crud {
+    margin-left: 0;
+    width: 340px;
+    height: 600px;
+  }
+  h5{
+    text-align: center;
+  }
+  #fechalista{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+  }
+  .titulo-modal{
+    display: block;
+  }
+}

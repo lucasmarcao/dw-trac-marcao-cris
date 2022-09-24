@@ -1,0 +1,15 @@
+.btn-link:hover {
+  color: wheat !important;
+  text-decoration: none !important;
+}
+
+.h1erro{
+  background: url(../midia/fundo1.jpg);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.perro{
+  background: url(../midia/fundo1.jpg);
+  padding: 5px 10px;
+}

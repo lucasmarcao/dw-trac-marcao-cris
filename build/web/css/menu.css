@@ -1,0 +1,117 @@
+nav {
+  background: url(../midia/fundo1.jpg);
+  border-bottom: 1px solid black;
+}
+
+.img-logo {
+  height: 400px;
+  width: 400px;
+  margin: 10px 0;
+  background: url(../midia/fundo2.jpg);
+  border: 2px double black;
+}
+.nav-img {
+  height: 34px;
+  width: 34px;
+}
+.descricao-index{
+  background: url(../midia/fundo2.jpg);
+  color: antiquewhite !important;
+  filter: brightness(1.25);
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 5px;
+}
+.nav-link:hover,
+.nav-img:hover {
+  transition: 0.8s;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 7px;
+  color: azure !important;
+}
+
+.dropdown-menu {
+  color: black !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+.dropdown-menu:hover {
+  color: rgb(175, 175, 175) !important;
+}
+
+main {
+  width: 700px;
+  margin: 10px 0;
+  padding: 10px;
+  height: auto;
+  background: url(../midia/pizza-walpaper.jpg);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-weight: 700;
+}
+
+.side-img {
+  width: 500px !important;
+  background: url(https://br.godaddy.com/blog/wp-content/uploads/O-Que-E-Um-Codigo-fonte.jpg);
+  background-size: contain;
+  height: 440px;
+}
+.side-txt {
+  background: url(../midia/fundo2.jpg);
+}
+.card-text {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  background-color: rgb(222, 148, 11);
+  padding: 5px;
+  font-weight: 700;
+}
+
+.butao-card {
+  width: 100%;
+  padding: 5px;
+}
+
+.amarelo {
+  background: rgb(220, 187, 0);
+}
+.azul {
+  background: rgb(54, 54, 255);
+}
+.vermelho {
+  background-color: red;
+}
+.caroselfaleconosco {
+  height: 420px;
+  width: 600px;
+}
+.btn-index{
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-size: 18px !important;
+  letter-spacing: 0.75px;
+  filter: brightness(0.8);
+}
+
+@media (max-width: 991.98px) {
+  .img-logo {
+    height: 200px;
+    width: 200px;
+    margin: 10px 0;
+  }
+  .caroselfaleconosco {
+    height: 200px;
+    width: 280px;
+  }
+  .side-img {
+    height: 100px;
+  }
+}
