@@ -98,7 +98,7 @@ public class Cargos implements Serializable {
 
     @Override
     public String toString() {
-        return idcargos + ";"+nomecargo+";"+descricaoCargo;
+        return "Id: "+idcargos + "<br>"+nomecargo+" - { "+descricaoCargo+" }";
     }
     
 }
