@@ -78,7 +78,8 @@ h4 {
 }
 
 .scroll {
-  height: 360px;
+  height: auto;
+  max-height: 360px;
   width: 100%;
   overflow-x: auto;
   overflow-y: visible;
