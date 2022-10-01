@@ -1,5 +1,7 @@
 <%@page import="static Entidades.Access.$Fornecedor" %>
 <%@page import="Entidades.Fornecedor" %>
+<%@page import="static Entidades.Access.$Acompanhamentos" %>
+<%@page import="Entidades.Acompanhamentos" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,13 +20,19 @@
     </head>
 
     <body>
+        <%
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            Acompanhamentos acompanhamentos = $Acompanhamentos.get(id);
+            String n1 = acompanhamentos.getNomeaconpanhamento();
+            Integer n2 = Integer.parseInt(String.valueOf(acompanhamentos.getFornecedoridfornecedor()).substring(4, 5));
+        %>
         <div class="crud">
-            <form method="post" autocomplete="off" class="cabeca" id="form">
+            <form method="post" action="/dw2-marcao-cristofer/AcompanhamentosServlet" autocomplete="off" class="cabeca" id="form">
                 <label for="id" class="id-label">ID</label></label>
                 <input type="tel" class="campo input" name="id" id="id" oninput="mascaraId(this)" onpaste="return false"
-                       ondrop="return false" onclick="controlaFalhasInputId()" required>
+                       ondrop="return false" onclick="controlaFalhasInputId()" value="<%=id%>" required>
                 <div class="centraliza">
-                    <button type="button" onclick="buscarBotao()" class="campo botao buscar" id="buscar">buscar</button>
+                    <input type="hidden" value="SEARCH" id="opcao" name="function"> <button type="submit" onclick="buscarBotao()" class="campo botao buscar" id="buscar">buscar</button>
                     <button type="button" onclick="alterarBotao()" class="campo botao alterar" id="alterar">alterar</button>
                 </div>
                 <div class="centraliza">
@@ -43,14 +51,16 @@
                 <div class="corpo container">
                     <div class="linha row">
                         <div class="col-6 label-dado">Nome Acompanhamentos</div>
-                        <input type="number" name="lb2" class="col-6 input-dado" id="lb2" min="1" maxlength="20" required disabled>
+                        <input type="text" name="nome" class="col-6 input-dado" id="lb2" min="1"  value="<%=n1%>" maxlength="20" required disabled>
                     </div>
 
                     <div class="linha row">
                         <div class="col-6 label-dado">Fornecedor</div>
-                        <select type="text" name="lb4" class="col-6 input-dado" id="lb4" required disabled>
+                        <select type="text" name="idfornecedor" class="col-6 input-dado" id="lb4" required disabled>
                             <%for (Fornecedor fornecedor : $Fornecedor.result("all")) {%>
-                            <option value="<%=fornecedor.getIdfornecedor()%>"> <%=fornecedor.getIdfornecedor()%> -  {<%=fornecedor.getNomefornecedor()%>} </option>
+                            <option value="<%=fornecedor.getIdfornecedor()%>"  <%=(fornecedor.getIdfornecedor() == n2) ? "selected" : ""%> > 
+                                <%=fornecedor.getIdfornecedor()%> -  {<%=fornecedor.getNomefornecedor()%>} 
+                            </option>
                             <%}%>
                         </select>
                     </div>
@@ -58,7 +68,7 @@
             </form>
             <div class="centro">
                 <a href="../adm.jsp" class="btn btn-primary" style="width: 300px; font-size: 20px;
-                   background: url(/midia/fundo1.jpg);">
+                   ">
                     Menu
                 </a>
             </div>
