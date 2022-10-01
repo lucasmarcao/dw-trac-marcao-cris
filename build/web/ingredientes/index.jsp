@@ -20,10 +20,10 @@
         <div class="crud">
             <form method="post" autocomplete="off" class="cabeca" id="form">
                 <label for="id" class="id-label">ID</label></label>
-                <input type="tel" class="campo input" name="$id" id="id" oninput="mascaraId(this)" onpaste="return false"
+                <input type="tel" class="campo input" name="id" id="id" oninput="mascaraId(this)" onpaste="return false"
                        ondrop="return false" onclick="controlaFalhasInputId()" required>
                 <div class="centraliza">
-                    <button type="button" onclick="buscarBotao()" class="campo botao buscar" id="buscar">buscar</button>
+                    <input type="hidden" value="SEARCH" id="opcao" name="function"> <button type="submit" onclick="buscarBotao()" class="campo botao buscar" id="buscar">buscar</button>
                 </div>
                 <div class="centraliza">
                     <a href="listar.jsp">
@@ -48,7 +48,7 @@
             </form>
             <div class="centro">
                 <a href="../adm.jsp" class="btn btn-primary" style="width: 300px; font-size: 20px;
-                   background: url(/midia/fundo1.jpg);">
+                   ">
                     Menu
                 </a>
             </div>

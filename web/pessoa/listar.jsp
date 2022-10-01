@@ -86,7 +86,7 @@
                                             <div class="modal-footer">
                                                 <div class="centro">
                                                     <a href="../adm.jsp" class="btn btn-primary" style="width: 200px; font-size: 18px;
-                                                       background: url(/midia/fundo1.jpg);">
+                                                       ">
                                                         Menu
                                                     </a>
                                                 </div>

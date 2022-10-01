@@ -12,8 +12,7 @@ public final class Access<E> implements Iterable<E> {
 
     public static EntityManager EM = Persistence.createEntityManagerFactory("UP").createEntityManager();
 
-    public static Access<Pet> $Pet = new Access(Pet.class
-    );
+    
     // Acompanhamentos
     public static Access<Acompanhamentos> $Acompanhamentos = new Access(Acompanhamentos.class
     );

@@ -216,9 +216,9 @@ option {
   margin-top: 10px;
 }
 .btn-primary {
-  color: green;
+  color: black !important;
   font-size: 22px !important;
-  background: url(../midia/fundo2.jpg) !important;
+  background: url(../midia/fundo1.jpg) !important;
   font-weight: bold;
 }
 .btn-primary:hover {
@@ -294,6 +294,10 @@ code {
   font-weight: bold;
   padding: 6px 8px;
   background: url(../midia/fundo3.jpg);
+}
+.errorlog{
+    background: greenyellow;
+    padding: 10px 0;
 }
 @media (max-width: 991.98px) {
   .crud {

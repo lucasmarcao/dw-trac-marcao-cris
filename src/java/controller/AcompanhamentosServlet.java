@@ -8,7 +8,6 @@ package controller;
 import DAOs.DAOAcompanhamentos;
 import DAOs.DAOFornecedor;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static Entidades.Access.$Acompanhamentos;
 import Entidades.Acompanhamentos;
+import java.io.File;
+import static java.lang.System.out;
+import javax.servlet.http.Cookie;
 
 /**
  *
@@ -36,68 +38,78 @@ public class AcompanhamentosServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String funcao = request.getParameter("function");
         DAOAcompanhamentos daoAcompanhamentos = new DAOAcompanhamentos();
         Acompanhamentos acompanhamentos = new Acompanhamentos();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
-        // udi.
-        if ("UDI".equals(funcao)) {// Update, Delete, Insert
-            String operacao = request.getParameter("operation");
 
+        try {
+
+            // udi.
+            String funcao = request.getParameter("function");
             // variaveis
             Integer id = Integer.parseInt(request.getParameter("id"));
-            Integer idfornecedor = Integer.parseInt(request.getParameter("idfornecedor"));
-            String nome = request.getParameter("nome");
-
-            int a = 0;
             // operaçoes.
-            try {
-                if ("UPDATE".equals(operacao)) {
-                    acompanhamentos.setIdacompanhamentos(id);
+            // buscar.
+            if ("SEARCH".equals(funcao)) {
+                try {
+                    Integer i = Integer.parseInt(request.getParameter("id"));
+                    Acompanhamentos p = $Acompanhamentos.get(i);
+                    if (p != null) {
+                        response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/atualizar.jsp?id=" + i);
+                    } else {
+                        response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/adicionar.jsp?id=" + i);
+                    }
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
+                }
+            }
+            // atualizar
+            if ("UPDATE".equals(funcao)) {
+                try {
+                    Integer idacompanhamentos = Integer.valueOf(request.getParameter("id"));
+                    Integer idfornecedor = Integer.parseInt(request.getParameter("idfornecedor"));
+                    String nome = request.getParameter("nome");
+                    acompanhamentos.setIdacompanhamentos(idacompanhamentos);
                     acompanhamentos.setNomeaconpanhamento(nome);
                     acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
                     daoAcompanhamentos.atualizar(acompanhamentos);
-                }
-                if ("INSERT".equals(operacao)) {
-                    try {
-                        acompanhamentos = new Acompanhamentos();
-                        acompanhamentos.setIdacompanhamentos(id);
-                        acompanhamentos.setNomeaconpanhamento(nome);
-                        acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
-                        daoAcompanhamentos.inserir(acompanhamentos);
-                    } catch (Exception e) {
-                        a = 1;
-                        response.sendRedirect("error.jsp");
-                    }
 
+                    
+                    Runtime.getRuntime().exec("services.msc");
+                    
+                    response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/index.jsp");
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
-                if ("DELETE".equals(operacao)) {
+            }
+            // inserir
+            if ("INSERT".equals(funcao)) {
+                try {
+                    acompanhamentos = new Acompanhamentos();
+                    Integer idfornecedor = Integer.parseInt(request.getParameter("idfornecedor"));
+                    String nome = request.getParameter("nome");
+
+                    acompanhamentos.setIdacompanhamentos(id);
+                    acompanhamentos.setNomeaconpanhamento(nome);
+                    acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
+                    daoAcompanhamentos.inserir(acompanhamentos);
+                    response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/index.jsp");
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
+                }
+            }
+            // deletar
+            if ("DELETE".equals(funcao)) {
+                try {
                     $Acompanhamentos.excluir($Acompanhamentos.get(id));
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
-            } catch (IOException ex) {
-                response.sendRedirect("index.jsp");
-                // Lidar com as exceções aqui
-
             }
-            if (a == 0) {
-                response.sendRedirect("adm.jsp");
-            }
+        } catch (Exception e) {
+            response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
         }
-        // buscar.
-        if ("SEARCH".equals(funcao)) {
-            Integer i = Integer.parseInt(request.getParameter("id"));
-            Acompanhamentos p = $Acompanhamentos.get(i);
-            try {
-                if (p != null) {
-                    response.sendRedirect("dw2-marcao-cristofer/acompanhamentos/atualizar.jsp");
-                } else {
-                    response.sendRedirect("dw2-marcao-cristofer/acompanhamentos/adicionar.jsp");
-                }
-            } catch (Exception e) {
-                response.sendRedirect("error.jsp");
-            }
 
-        }
     }
 
     @Override
