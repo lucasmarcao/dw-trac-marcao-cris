@@ -17,18 +17,21 @@ public class DAOGenerico<T> {
         em.getTransaction().begin();
         em.persist(e);
         em.getTransaction().commit();
+        em.refresh(e);
     }
 
     public void atualizar(T e) {
         em.getTransaction().begin();
         em.merge(e);
         em.getTransaction().commit();
+        
     }
 
     public void remover(T e) {
         em.getTransaction().begin();
         em.remove(e);
         em.getTransaction().commit();
+        em.refresh(e);
     }
 
     public T obter(Long id) {

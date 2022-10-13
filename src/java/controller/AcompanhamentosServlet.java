@@ -18,6 +18,7 @@ import Entidades.Acompanhamentos;
 import java.io.File;
 import static java.lang.System.out;
 import javax.servlet.http.Cookie;
+import org.apache.commons.httpclient.HttpStatus;
 
 /**
  *
@@ -38,11 +39,10 @@ public class AcompanhamentosServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAOAcompanhamentos daoAcompanhamentos = new DAOAcompanhamentos();
-        Acompanhamentos acompanhamentos = new Acompanhamentos();
-        DAOFornecedor daoFornecedor = new DAOFornecedor();
-
         try {
+            DAOAcompanhamentos daoAcompanhamentos = new DAOAcompanhamentos();
+            Acompanhamentos acompanhamentos = new Acompanhamentos();
+            DAOFornecedor daoFornecedor = new DAOFornecedor();
 
             // udi.
             String funcao = request.getParameter("function");
@@ -50,6 +50,7 @@ public class AcompanhamentosServlet extends HttpServlet {
             Integer id = Integer.parseInt(request.getParameter("id"));
             // operaçoes.
             // buscar.
+
             if ("SEARCH".equals(funcao)) {
                 try {
                     Integer i = Integer.parseInt(request.getParameter("id"));
@@ -67,20 +68,17 @@ public class AcompanhamentosServlet extends HttpServlet {
             if ("UPDATE".equals(funcao)) {
                 try {
                     Integer idacompanhamentos = Integer.valueOf(request.getParameter("id"));
+                    Acompanhamentos acom = $Acompanhamentos.get(idacompanhamentos);
                     Integer idfornecedor = Integer.parseInt(request.getParameter("idfornecedor"));
                     String nome = request.getParameter("nome");
-                    acompanhamentos.setIdacompanhamentos(idacompanhamentos);
-                    acompanhamentos.setNomeaconpanhamento(nome);
-                    acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
-                    daoAcompanhamentos.atualizar(acompanhamentos);
-
-                    
-                    Runtime.getRuntime().exec("services.msc");
-                    
+                    acom.setNomeaconpanhamento(nome);
+                    acom.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
+                    daoAcompanhamentos.atualizar(acom);
                     response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/index.jsp");
                 } catch (Exception e) {
                     response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
+
             }
             // inserir
             if ("INSERT".equals(funcao)) {
@@ -102,11 +100,12 @@ public class AcompanhamentosServlet extends HttpServlet {
             if ("DELETE".equals(funcao)) {
                 try {
                     $Acompanhamentos.excluir($Acompanhamentos.get(id));
+                    response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/index.jsp");
                 } catch (Exception e) {
                     response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception e) {   
             response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
         }
 

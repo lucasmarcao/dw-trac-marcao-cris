@@ -1,0 +1,6 @@
+exemplo de input number
+
+ <div class="forms-brutos">
+      <button type="button" class="lb-defalt">OUTRO ATRIBUTO</button>
+      <input class="input-dado" name="" type="number" min="0" max="999999" step="1" id="lb3" required disabled>
+  </div>

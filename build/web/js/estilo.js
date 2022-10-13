@@ -7,18 +7,18 @@
 // text-color: #c5b184;
 // 3c212a fundo menores
 // corrige o listar
-window.onload = function () {
-  try {
-    let corpao = document.querySelector(".scroll");
-    if (corpao.clientHeight <= 320) {
-      let cab = document.querySelector(".cabeca-modal");
-      cab.setAttribute("style", "margin-left: 7px;");
-      console.log(cab.clientHeight);
-    }
-  } catch (error) {
-    console.log(error, "deus me ama");
-  }
-};
+// window.onload = function () {
+//   try {
+//     let corpao = document.querySelector(".scroll");
+//     if (corpao.clientHeight <= 320) {
+//       let cab = document.querySelector(".cabeca-modal");
+//       cab.setAttribute("style", "margin-left: 7px;");
+//       console.log(cab.clientHeight);
+//     }
+//   } catch (error) {
+//     console.log(error, "deus me ama");
+//   }
+// };
 let enter = document.getElementById("id");
 if (document.body.contains(enter)) {
   console.log("o input id existe aqui");

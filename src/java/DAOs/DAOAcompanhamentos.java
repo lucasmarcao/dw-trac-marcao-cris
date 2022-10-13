@@ -26,6 +26,8 @@ public class DAOAcompanhamentos extends DAOGenerico<Acompanhamentos> {
     }
 
     public List<Acompanhamentos> listById(int id) {
+        Acompanhamentos managedProductEntity = em.find(Acompanhamentos.class, obter(id).getIdacompanhamentos());
+        em.refresh(managedProductEntity);
         return em.createQuery("SELECT e FROM Acompanhamentos + e WHERE e.idacompanhamentos= :id").setParameter("id", id).getResultList();
     }
 
@@ -35,6 +37,11 @@ public class DAOAcompanhamentos extends DAOGenerico<Acompanhamentos> {
 
     public List<Acompanhamentos> listInOrderId() {
         return em.createQuery("SELECT e FROM Acompanhamentos e ORDER BY e.idacompanhamentos").getResultList();
+    }
+
+    public void saveProduct(Acompanhamentos acompanhamentos) {
+        Acompanhamentos managedProductEntity = em.find(Acompanhamentos.class, acompanhamentos.getIdacompanhamentos());
+        em.refresh(managedProductEntity);
     }
 
     public List<String> listInOrderNomeStrings(String qualOrdem) {
@@ -47,17 +54,17 @@ public class DAOAcompanhamentos extends DAOGenerico<Acompanhamentos> {
 
         List<String> ls = new ArrayList<>();
         for (int i = 0; i < lf.size(); i++) {
-            ls.add(lf.get(i).getIdacompanhamentos()+ "-" + lf.get(i).getNomeaconpanhamento());
+            ls.add(lf.get(i).getIdacompanhamentos() + "-" + lf.get(i).getNomeaconpanhamento());
         }
         return ls;
     }
 
     public static void main(String[] args) {
         DAOAcompanhamentos daoAcompanhamentos = new DAOAcompanhamentos();
-        
+
         List<Acompanhamentos> listaAcompanhamentos = daoAcompanhamentos.list();
         for (Acompanhamentos trabalhador : listaAcompanhamentos) {
-            System.out.println(trabalhador.getIdacompanhamentos()+ "-" + trabalhador.getNomeaconpanhamento());
+            System.out.println(trabalhador.getIdacompanhamentos() + "-" + trabalhador.getNomeaconpanhamento());
         }
     }
 }

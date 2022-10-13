@@ -122,7 +122,7 @@ public class Fornecedor implements Serializable {
     @Override
     public String toString() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return "Id: "+idfornecedor + "<br> Nome: " + nomefornecedor + "<br> Porte: " + porteDaEmpresa;
+        return idfornecedor + " <br> Nome: " + nomefornecedor + "<br> Porte: " + porteDaEmpresa;
     }
 
 }
