@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  background: #2b181e;
+}
+/* nav-bar */
+nav {
+  background-color: #f9c440 !important;
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 55px;
+}
+.nav-link {
+  text-align: center;
+  width: 200px;
+  text-decoration: none !important;
+  color: #2b181e !important;
+  padding: 5px 8px;
+  border: #1f1116 1px solid;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.nav-link:hover {
+  transition: 0.7s;
+  background-color: #2b181e;
+  color: #f9c440 !important;
+}
+.conta-nav {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+/* nav-bar */
+
+h1 {
+  text-align: center;
+  font-size: 38px !important;
+  color: #c5b184;
+  margin: 20px 0;
+}
+aside {
+  border: 2px solid #f9c440;
+  width: 38%;
+  height: 55vh;
+}
+main {
+  position: relative;
+  border: 2px solid #f9c440;
+  margin-left: 5%;
+  width: 38%;
+  height: 55vh;
+}
+/* conteudo extra */
+h2 {
+  margin: 10px 0;
+  font-size: 28px;
+  text-align: center;
+  color: #2b181e;
+}
+.conteudo-extra {
+  background-color: #f9c440;
+  margin: 15px 0;
+  padding: 10px;
+  width: 81%;
+  height: auto;
+}
+.card {
+  background-color: #2b181e !important;
+  border: 1px solid #1f1116 !important;
+  color: #c5b184 !important;
+}
+.card-img-top {
+  border-bottom: 1px solid #c5b184 !important;
+  padding: 5px !important;
+}
+.card-title {
+  font-size: 26px !important;
+  font-weight: bold;
+}
+/* conteudo extra */
+
+.nav-img {
+  height: 34px;
+  width: 34px;
+}
+.img-logo {
+  width: 100%;
+  height: 100%;
+}
+/* MAIN */
+.titulo-main {
+  color: #c5b184;
+  font-size: 28px;
+  text-align: center;
+  margin: 10px 0;
+}
+.caixa-main {
+  margin: 10px 0;
+}
+.lista-main {
+  width: 250px;
+  color: #eebb3b;
+  font-size: 20px;
+}
+.botoes-main {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+}
+.botao-main {
+  text-decoration: none !important;
+  text-align: center;
+  padding: 6px 10px;
+  background-color: #eebb3b;
+  width: 200px;
+  border: none;
+  margin: 5px 10px;
+  color: #2b181e;
+}
+.botao-main:hover {
+  transition: 0.7s;
+  background-color: #1f1116;
+  border: 1px solid #eebb3b;
+  color: #f9c440;
+}
+/* MAIN */
+
+/* scroll*/
+.scroll::-webkit-scrollbar {
+  width: 16px;
+  background-color: #2b181e;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border: 2px solid black;
+  background-color: #1f1116;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  transition: 0.5s;
+  background-color: #f9c440;
+}
+/* scroll*/
+footer {
+  margin-top: 18px;
+  width: 100%;
+  height: 56px;
+  background-color: #f9c440;
+  position: static;
+  border-top: 1px solid black;
+  bottom: 0;
+  left: 0;
+}
+
+.text-footer {
+  margin-top: 15px;
+}
+
+.logo-footer {
+  vertical-align: middle;
+  margin-top: 12px;
+  height: 32px;
+  width: 38px;
+}
+
+h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+}
+
+.adm-index {
+  text-align: center;
+  background-color: #1f1116;
+  color: #c5b184;
+  border-radius: 10px;
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.item-links {
+  padding: 10px;
+  margin: 10px 0;
+  width: 90%;
+  text-align: center;
+  border: #1f1116 1px solid;
+  background-color: #c5b184;
+  color: #1f1116 !important;
+}
+.item-links:hover {
+  transition: 0.7s;
+  border: #c5b184 1px solid;
+  background-color: #2b181e;
+  color: #eebb3b !important;
+}
+.img-adm {
+  padding: 5px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(#c5b184, #2b181e);
+  border: 2px solid #2b181e;
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 25px !important;
+  }
+  nav {
+    position: initial;
+  }
+  .nav-link {
+    margin: auto;
+  }
+  .nav-item {
+    background-color: #f9c440 !important;
+    margin: auto;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .conta-nav {
+    position: initial;
+  }
+  .master {
+    display: block !important;
+  }
+  aside {
+    display: block !important;
+    margin-top: 15px;
+    margin-left: 2.5%;
+    width: 95%;
+  }
+  main {
+    display: block !important;
+    margin-left: 2.5%;
+    margin-top: 15px;
+    width: 95%;
+  }
+  .conteudo-extra {
+    width: 95%;
+  }
+
+  .text-footer {
+    text-align: center;
+  }
+  footer {
+    height: 100px;
+  }
+}

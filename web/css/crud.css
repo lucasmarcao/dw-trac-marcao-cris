@@ -1,0 +1,243 @@
+#formulario {
+  width: 800px;
+  height: 420px;
+  padding: 20px;
+  border: 1px solid #f9c440;
+}
+.img-index {
+  margin-right: 20px;
+  width: 150px;
+  height: 380px;
+  border: 1px solid #f9c440;
+}
+.img-index-2 {
+  margin-left: 20px;
+  width: 150px;
+  height: 380px;
+  border: 1px solid #f9c440;
+}
+.flex {
+  margin: 5px 0;
+}
+.botao-baixo-crud {
+  font-size: 20px;
+  text-transform: uppercase;
+  display: block !important;
+  border: none;
+  background: #2b181e;
+  color: #f9c440;
+  margin: auto;
+  height: 50px;
+  width: 800px;
+  text-align: center;
+  padding-top: 10px;
+}
+.botao-baixo-crud:hover {
+  transition: 0.5s;
+  border: 1px solid #2b181e;
+  background: #c5b184;
+  color: #2b181e;
+  margin: auto;
+}
+.label-id {
+  width: 120px;
+  height: 50px;
+  font-size: 22px;
+  text-align: center;
+  background: #f9c440;
+  color: #2b181e;
+  border: none;
+}
+#id {
+  padding: 5px;
+  border: none;
+  height: 50px;
+  font-size: 22px;
+  width: 400px;
+  background: #c5b184;
+  color: #2b181e;
+}
+.btn-buscar {
+  height: 50px;
+  border: none;
+  width: 200px;
+  font-size: 22px;
+  background: #f9c440;
+  color: #2b181e;
+}
+.btn-buscar:hover {
+  border: 1px solid #f9c440;
+  background: #c5b184;
+  color: #2b181e;
+}
+.forms-brutos {
+  margin: 10px 0;
+}
+.lb-defalt {
+  border: none;
+  background: #f9c440;
+  color: #2b181e;
+  font-size: 17px;
+  width: 360px;
+  height: 50px;
+  margin-top: 0;
+  margin-right: 10px;
+}
+.input-dado {
+  font-size: 17px;
+  padding: 5px;
+  border: none;
+  background: #c5b184;
+  color: #2b181e;
+  width: 360px;
+  margin-top: 0;
+  height: 51px;
+}
+
+/* LISTAR */
+.img-listar {
+  border: 1px solid #f9c440;
+  width: 81%;
+  height: 220px;
+}
+.listador {
+  border: #f9c440 1px solid;
+  background-color: #211317;
+  margin: 15px 0;
+  padding: 15px;
+  width: 81%;
+  height: auto;
+}
+
+table {
+  border: 1px #f9c440 solid;
+}
+.id-cabeca {
+  text-transform: uppercase;
+  text-align: center;
+  border: #211317 1px solid;
+  padding: 8px 15px;
+  background-color: #f9c440;
+  color: #2b181e;
+}
+.atr-cabeca {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 10px;
+  border: #211317 1px solid;
+  background-color: #f9c440;
+  color: #2b181e;
+}
+.id-corpo {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 4px 15px;
+  border: #211317 1px solid;
+  background-color: #c5b184;
+  color: #2b181e;
+}
+.atr-corpo {
+  border: #211317 1px solid;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 4px 10px;
+  background-color: #c5b184;
+  color: #2b181e;
+}
+.tabela {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.tabela::-webkit-scrollbar {
+  background-color: #2b181e !important;
+}
+.tabela::-webkit-scrollbar-thumb {
+  border: black 2px solid;
+  background: #f9c440 !important;
+}
+.salvar {
+  display: none !important;
+}
+.cancelar {
+  display: none !important;
+}
+/* LISTAR */
+
+/* EXCLUIR */
+.conteudo-modal {
+  background-color: #2b181e;
+  color: #f9c440;
+}
+.fundo-modal-foter {
+  background-color: #c5b184;
+  border: 1px solid #f9c440 !important;
+}
+.anti-borda {
+  border: none !important;
+}
+#negado,
+#confirmado {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+}
+.salvar {
+  padding-top: 0 !important;
+}
+/* EXCLUIR */
+
+@media (max-width: 991.98px) {
+  #texto-exclusao {
+    text-align: center;
+  }
+  .segura-index {
+    border: 1px solid #f9c440;
+    margin-left: 5%;
+    width: 90%;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: url(https://i.pinimg.com/736x/29/48/3d/29483d95a01e53e376939bae351c2bbb.jpg);
+  }
+  #formulario {
+    margin-left: 5%;
+    width: 90%;
+    height: auto;
+    border: 1px solid #f9c440;
+  }
+  .label-id {
+    width: 100%;
+  }
+  #id {
+    width: 100%;
+  }
+  .btn-buscar {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  .lb-defalt {
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .input-dado {
+    width: 100%;
+  }
+  .img-index {
+    margin: 5px;
+    width: 5px;
+    height: 5px;
+    border: none;
+    display: none;
+  }
+  .img-index-2 {
+    margin: 5px;
+    width: 5px;
+    height: 5px;
+    border: none;
+    display: none;
+  }
+  .botao-baixo-crud {
+    width: 70%;
+  }
+}

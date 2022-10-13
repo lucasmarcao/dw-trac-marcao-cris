@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Parameter;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import org.eclipse.persistence.internal.helper.JPAClassLoaderHolder;
 
 public final class Access<E> implements Iterable<E> {
 
@@ -77,7 +78,7 @@ public final class Access<E> implements Iterable<E> {
     public void adicionar(E e) {
         EM.getTransaction().begin();
         EM.persist(e);
-        EM.getTransaction().commit();
+        EM.getTransaction().commit();       
     }
 
     public E get(Object pk) {

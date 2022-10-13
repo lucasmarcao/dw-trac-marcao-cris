@@ -28,5 +28,28 @@ versão 0.4 {
 
 versão 0.5 {
   Hoje eu terminei todas as tabelas e fiz o perfil user( ainda está inacabado ).
-  Vou arrumar a responsividade de algumas paginas.
+  Vou arrumar a responsividade de algumas paginas. acabei de passar tudo pro jsp 
+  e arrumei os caminhos e a estrutura das pastas teve que mudar
 }
+
+versão 0.6 {
+  acabei de criar os servets, os DAOs e coloquei a classe de entidade do bd("up")
+  . Também já adcionei as entidades da minha tabela e to mexendo no toString delas,
+  to colocando dois tipos de DAOs/entidades, um é chamado Access e os outros tem o
+  nome das tabelas. corrigi alguns "src" e uns "href" que nao estavam pegando.
+}
+
+versão 0.7 {
+  Listei todas as tabelas independentes, 1 pra N, e 1 pra 1 também, agora estou
+  dando uns retoque na estilização, mas parece q vou ter que refazer a interface,
+  vou usar o FIGMA pra criar uns "layouts" bonitos, e depois vou repassar no JSP.
+  Acabei de deixar a tabela "ACOMPANHAMENTOS" como um crud completo e funcional,
+  listei os <selects> de todas as tabelas dinamicamente.
+}
+
+versão 0.8 {
+  To passando os layouts que eu fiz no FIGMA pro JSP, o layout novo do crud ja
+  ta na table ACOMPANHAMENTOS, vou fazer toda a base dos servets agora e boa,
+  tambem usei o js para deixar o listar.jsp bonito.
+}
+
