@@ -35,6 +35,9 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "senha")
     private String senha;
+    @Basic(optional = false)
+    @Column(name = "cargo")
+    private String cargo;
 
     public User() {
     }
@@ -43,10 +46,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public User(String email, String nome, String senha) {
+    public User(String email, String nome, String senha, String cargo) {
         this.email = email;
         this.nome = nome;
         this.senha = senha;
+        this.cargo = cargo;
     }
 
     public String getEmail() {
@@ -73,6 +77,14 @@ public class User implements Serializable {
         this.senha = senha;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -87,12 +99,15 @@ public class User implements Serializable {
             return false;
         }
         User other = (User) object;
-        return !((this.email == null && other.email != null) || (this.email != null && !this.email.equals(other.email)));
+        if ((this.email == null && other.email != null) || (this.email != null && !this.email.equals(other.email))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "model.User[ email=" + email + " ]";
+        return email + ";" + nome + ";" + cargo + ";" + senha;
     }
-    
+
 }

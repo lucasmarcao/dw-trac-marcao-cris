@@ -92,7 +92,7 @@
 
             </span>
           </p>
-          <a id="botaovazar" href="index.jsp" class="btn btn-danger">
+          <a id="botaovazar" href="../index.jsp" class="btn btn-danger">
             Sair da conta
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open"
               viewBox="0 0 16 16">

@@ -2,7 +2,6 @@ console.log("BOM DIA \n \n");
 try {
   let itens = document.querySelectorAll(".itens div").length;
   let itensFilho = itens / document.querySelectorAll(".itens").length;
-
   let item = document.querySelectorAll(".dado-item");
   console.log(
     "o tanto de div dentro de itens é = ",

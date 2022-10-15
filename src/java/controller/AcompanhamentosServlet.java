@@ -15,10 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static Entidades.Access.$Acompanhamentos;
 import Entidades.Acompanhamentos;
-import java.io.File;
-import static java.lang.System.out;
-import javax.servlet.http.Cookie;
-import org.apache.commons.httpclient.HttpStatus;
 
 /**
  *
@@ -102,7 +98,8 @@ public class AcompanhamentosServlet extends HttpServlet {
                     $Acompanhamentos.excluir($Acompanhamentos.get(id));
                     response.sendRedirect("/dw2-marcao-cristofer/acompanhamentos/index.jsp");
                 } catch (Exception e) {
-                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
+                   
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=Nao-Da-Pra-excluir-isso");
                 }
             }
         } catch (Exception e) {   

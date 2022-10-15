@@ -72,6 +72,7 @@
 }
 .forms-brutos {
   margin: 10px 0;
+  position: relative;
 }
 .lb-defalt {
   border: none;
@@ -185,6 +186,17 @@ table {
   padding-top: 0 !important;
 }
 /* EXCLUIR */
+
+.lb-area{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.txt-area{
+  position: absolute;
+  top: 0;
+  right: 18px;
+}
 
 @media (max-width: 991.98px) {
   #texto-exclusao {

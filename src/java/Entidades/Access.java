@@ -13,7 +13,6 @@ public final class Access<E> implements Iterable<E> {
 
     public static EntityManager EM = Persistence.createEntityManagerFactory("UP").createEntityManager();
 
-    
     // Acompanhamentos
     public static Access<Acompanhamentos> $Acompanhamentos = new Access(Acompanhamentos.class
     );
@@ -62,9 +61,16 @@ public final class Access<E> implements Iterable<E> {
     // operacoes
     //excluir
     public void excluir(E e) {
-        EM.getTransaction().begin();
-        EM.remove(e);
-        EM.getTransaction().commit();
+        try {
+            EM.getTransaction().begin();
+            EM.remove(e);
+            EM.getTransaction().commit();
+        } catch (Exception erro) {
+            int bomdia = 1/0;
+           
+            System.out.println(bomdia);
+        }
+        
     }
 
     //atualizar
@@ -78,7 +84,7 @@ public final class Access<E> implements Iterable<E> {
     public void adicionar(E e) {
         EM.getTransaction().begin();
         EM.persist(e);
-        EM.getTransaction().commit();       
+        EM.getTransaction().commit();
     }
 
     public E get(Object pk) {
