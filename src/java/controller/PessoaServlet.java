@@ -6,11 +6,15 @@
 package controller;
 
 import DAOs.DAOAcompanhamentos;
+import DAOs.DAOPessoa;
 import DAOs.DAOFornecedor;
 import static Entidades.Access.$Acompanhamentos;
+import static Entidades.Access.$Pessoa;
 import Entidades.Acompanhamentos;
+import Entidades.Pessoa;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,68 +40,87 @@ public class PessoaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String funcao = request.getParameter("function");
-        DAOAcompanhamentos daoAcompanhamentos = new DAOAcompanhamentos();
-        Acompanhamentos acompanhamentos = new Acompanhamentos();
-        DAOFornecedor daoFornecedor = new DAOFornecedor();
-        // udi.
-        if ("UDI".equals(funcao)) {// Update, Delete, Insert
-            String operacao = request.getParameter("operation");
+        try {
+            DAOPessoa DAOPessoa = new DAOPessoa();
+            Pessoa pessoa = new Pessoa();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
+            // udi.
+            String funcao = request.getParameter("function");
             // variaveis
             Integer id = Integer.parseInt(request.getParameter("id"));
-            Integer idfornecedor = Integer.parseInt(request.getParameter("idfornecedor"));
-            String nome = request.getParameter("nome");
-
-            int a = 0;
             // operaçoes.
-            try {
-                if ("UPDATE".equals(operacao)) {
-                    acompanhamentos.setIdacompanhamentos(id);
-                    acompanhamentos.setNomeaconpanhamento(nome);
-                    acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
-                    daoAcompanhamentos.atualizar(acompanhamentos);
-                }
-                if ("INSERT".equals(operacao)) {
-                    try {
-                        acompanhamentos = new Acompanhamentos();
-                        acompanhamentos.setIdacompanhamentos(id);
-                        acompanhamentos.setNomeaconpanhamento(nome);
-                        acompanhamentos.setFornecedoridfornecedor(daoFornecedor.obter(idfornecedor));
-                        daoAcompanhamentos.inserir(acompanhamentos);
-                    } catch (Exception e) {
-                        a = 1;
-                        response.sendRedirect("error.jsp");
+            // buscar.
+
+            if ("SEARCH".equals(funcao)) {
+                try {
+                    Integer i = Integer.parseInt(request.getParameter("id"));
+                    Pessoa p = $Pessoa.get(i);
+                    if (p != null) {
+                        response.sendRedirect("/dw2-marcao-cristofer/pessoa/atualizar.jsp?id=" + i);
+                    } else {
+                        response.sendRedirect("/dw2-marcao-cristofer/pessoa/adicionar.jsp?id=" + i);
                     }
-
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
-                if ("DELETE".equals(operacao)) {
-                    $Acompanhamentos.excluir($Acompanhamentos.get(id));
+            }
+            // atualizar
+            if ("UPDATE".equals(funcao)) {
+                try {
+                    Integer idpessoa = Integer.valueOf(request.getParameter("id"));
+                    Pessoa acom = $Pessoa.get(idpessoa);
+                    String nome = request.getParameter("nome");
+                    Double altura = Double.parseDouble(request.getParameter("altura"));
+                    String cpf = request.getParameter("cpf");
+                    String cep = request.getParameter("cep");
+                    acom.setNome(nome);
+                    acom.setAltura(altura);
+                    acom.setCpf(cpf);
+                    acom.setCep(cep);
+                    acom.setDatanascimento(simpleDateFormat.parse((request.getParameter("data"))));
+                    DAOPessoa.atualizar(acom);
+                    response.sendRedirect("/dw2-marcao-cristofer/pessoa/index.jsp");
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
                 }
-            } catch (IOException ex) {
-                response.sendRedirect("index.jsp");
-                // Lidar com as exceções aqui
 
             }
-            if (a == 0) {
-                response.sendRedirect("adm.jsp");
+            // inserir
+            if ("INSERT".equals(funcao)) {
+                try {
+                    pessoa = new Pessoa();
+                    String nome = request.getParameter("nome");
+                    Double altura = Double.parseDouble(request.getParameter("altura"));
+                    String cpf = request.getParameter("cpf");
+                    String cep = request.getParameter("cep");
+
+                    pessoa.setIdpessoa(id);
+                    pessoa.setNome(nome);
+                    pessoa.setAltura(altura);
+                    pessoa.setCpf(cpf);
+                    pessoa.setCep(cep);
+                    pessoa.setDatanascimento(simpleDateFormat.parse((request.getParameter("data"))));
+                    DAOPessoa.inserir(pessoa);
+                    response.sendRedirect("/dw2-marcao-cristofer/pessoa/index.jsp");
+                } catch (Exception e) {
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
+                }
             }
+            // deletar
+            if ("DELETE".equals(funcao)) {
+                try {
+                    $Pessoa.excluir($Pessoa.get(id));
+                    response.sendRedirect("/dw2-marcao-cristofer/pessoa/index.jsp");
+                } catch (Exception e) {
+
+                    response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=Nao-Da-Pra-excluir-isso");
+                }
+            }
+        } catch (Exception e) {
+            response.sendRedirect("/dw2-marcao-cristofer/error.jsp?desc=" + e);
         }
-        // buscar.
-        if ("SEARCH".equals(funcao)) {
-            Integer i = Integer.parseInt(request.getParameter("id"));
-            Acompanhamentos p = $Acompanhamentos.get(i);
-            try {
-                if (p != null) {
-                    response.sendRedirect("dw2-marcao-cristofer/acompanhamentos/atualizar.jsp");
-                } else {
-                    response.sendRedirect("dw2-marcao-cristofer/acompanhamentos/adicionar.jsp");
-                }
-            } catch (Exception e) {
-                response.sendRedirect("error.jsp");
-            }
 
-        }
     }
 
     @Override
